@@ -84,6 +84,9 @@ jQuery(($) => { // document on ready
                 }
                 // show the country name in the dataShow div on index.html
                 $("#dataShow").append('<h1>' + countryShow + '</h1>');
+                $("#dataShow").append('<button class="btn maps" data-country="'+countryShow+'">MAP</button>');
+                $("#dataShow").append('<button class="btn history" data-country="'+countryShow+'">HISTORY</button>');
+                $("#dataShow").append('<button class="btn actors" data-country="'+countryShow+'">ACTORS</button>');
             }
         });
     });
