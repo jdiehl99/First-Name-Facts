@@ -88,7 +88,7 @@ jQuery(($) => { // document on ready
                 $("#dataShow").append('<h1>' + countryShow + '</h1>');
                 $("#dataShow").append('<button class="btn maps" data-country="'+countryShow+'">MAP</button>');
                 $("#dataShow").append('<button class="btn history" data-country="'+countryShow+'">HISTORY</button>');
-                $("#dataShow").append('<button class="btn actors" data-country="'+countryShow+'">ACTORS</button>');
+                $("#dataShow").append('<button class="btn actors" data-name="'+searchTerm+'" data-country="'+countryShow+'">ACTORS</button>');
             }
         });
     });

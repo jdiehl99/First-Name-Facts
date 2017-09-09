@@ -18,15 +18,15 @@ $(document).on("click", ".actors", function () {
         console.log(response);
         // go through results and display list of names
         var data = response.results;
-        ul = $("<ul>"); 
+        udiv = $('<div class="pure-g">'); 
         for (var i = 0; i < data.length; i++) {
-            ul.append('<li>'+data[i].name+'</li>');
+            udiv.append('<div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">'+data[i].name+'</div>');
         }
-        $("#dataShow").append(ul);    // add the list to the dataShow div
+        $("#dataShow").append(udiv);    // add the list to the dataShow div
     });
 
 });
 
-// URL for photo of actor https://image.tmdb.org/t/p/w92{profile_path}
+// URL for photo of actor https://image.tmdb.org/t/p/w92/{profile_path}
 // larger photo available at w185 and smaller at w45
 // link to search results if we want to include that https://www.themoviedb.org/search?query=julia+roberts

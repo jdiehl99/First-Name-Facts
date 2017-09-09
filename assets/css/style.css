@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="col-"] {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    [class*="col-"] {
+        width: 100%;
+    }
+}
+
+@media print {
+    body {
+        background-color: #fff;
+        background-image: hide;
+    }
+}
