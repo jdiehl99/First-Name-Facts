@@ -37,7 +37,9 @@ jQuery(($) => { // document on ready
                         console.log("origin", countryOrigin);
 
                         // change variable to country name instead of origin, ie: from Spanish to Spain
-                        if (countryOrigin == "Catalan") {
+                        if (countryOrigin == "American") {
+                            countryShow = "USA";
+                        } else if (countryOrigin == "Catalan") {
                             countryShow = "Catalonia";
                         } else if (countryOrigin == "Chinese") {
                             countryShow = "China";

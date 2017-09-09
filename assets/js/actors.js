@@ -16,7 +16,7 @@ searchTerm = "steven";
         method: 'GET'
     }).done(function (response) {
         console.log(response);
-        // go through results and display list of name
+        // go through results and display list of names
         var data = response.results;
         ul = $("<ul>"); 
         for (var i = 0; i < data.length; i++) {
