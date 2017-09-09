@@ -21,3 +21,12 @@
         background-image: hide;
     }
 }
+
+div.actorList {
+    -webkit-column-count: 3; 
+    -moz-column-count: 3; 
+    column-count: 3;
+}
+div.actorDisplay {
+    break-before: column;
+}
