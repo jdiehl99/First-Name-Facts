@@ -2,8 +2,8 @@ $(document).on("click", ".actors", function () {
     event.preventDefault();
 
     // get first name from button attribute
-    // var searchTerm = $(this).attr("data-name");
-searchTerm = "steven";
+    var searchTerm = $(this).attr("data-name");
+
     console.log("searchTerm",searchTerm);
     // hide the buttonsDiv
     $("#buttonsDiv").hide();
