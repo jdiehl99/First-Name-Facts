@@ -23,7 +23,7 @@ jQuery(($) => { // document on ready
 
                 // grab the results from the XML data returned from BehindTheName
                 var originInfo = $(xml).find('usage').text();
-                // console.log("origin info", originInfo);
+                console.log("origin info", originInfo);
                 // if no origin was returned, mark as unknown
                 if (originInfo == "") {
                     countryShow = "Unknown";
@@ -35,7 +35,7 @@ jQuery(($) => { // document on ready
                         }
                         // assign the returned origin to variable countryOrigin
                         var countryOrigin = $(this).text();
-                        // console.log("origin", countryOrigin);
+                        console.log("origin", countryOrigin);
 
                         // change variable to country name instead of origin, ie: from Spanish to Spain
                         if (countryOrigin == "Catalan") {
@@ -83,7 +83,6 @@ jQuery(($) => { // document on ready
                         }
                     });
                 }
-                console.log(countryShow);
                 // show the country name in the dataShow div on index.html
                 $("#buttonsDiv").html('<h1>' + countryShow + '</h1>');
                 $("#buttonsDiv").append('<button class="btn maps" data-country="'+countryShow+'">MAP</button>');
@@ -93,3 +92,4 @@ jQuery(($) => { // document on ready
         });
     });
 });
+
