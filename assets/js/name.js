@@ -37,7 +37,9 @@ jQuery(($) => { // document on ready
                         console.log("origin", countryOrigin);
 
                         // change variable to country name instead of origin, ie: from Spanish to Spain
-                        if (countryOrigin == "Catalan") {
+                        if (countryOrigin == "American") {
+                            countryShow = "USA";
+                        } else if (countryOrigin == "Catalan") {
                             countryShow = "Catalonia";
                         } else if (countryOrigin == "Chinese") {
                             countryShow = "China";
@@ -83,10 +85,12 @@ jQuery(($) => { // document on ready
                     });
                 }
                 // show the country name in the dataShow div on index.html
-                $("#buttonsDiv").html('<h1>' + countryShow + '</h1>');
-                $("#buttonsDiv").append('<button class="btn maps" data-country="'+countryShow+'">MAP</button>');
-                $("#buttonsDiv").append('<button class="btn history" data-country="'+countryShow+'">HISTORY</button>');
-                $("#buttonsDiv").append('<button class="btn actors" data-name="'+searchTerm+'" data-country="'+countryShow+'">ACTORS</button>');
+
+                $("#dataShow").append('<h1>' + countryShow + '</h1>');
+                $("#dataShow").append('<button class="btn maps" data-country="'+countryShow+'">MAP</button>');
+                $("#dataShow").append('<button class="btn history" data-country="'+countryShow+'">HISTORY</button>');
+                $("#dataShow").append('<button class="btn actors" data-name="'+searchTerm+'" data-country="'+countryShow+'">ACTORS</button>');
+
             }
         });
     });
