@@ -11,11 +11,14 @@ $(document).ready(function(){
     var countryShow = $(this).attr("data-country");
 
 
-    var x=countryShow.toLowerCase();
-    var first=factbook.countries[x].data.introduction.background
+    var countryHistory;
+    if(countryShow!=="Unknown"){
+    countryHistory=factbook.countries[countryShow.toLowerCase()].data.introduction.background
+    }else{
+      countryHistory="Unknown Origin";
+      }
 
-
-    $("#dataShow").append('<p>'+first+'</p>');
+    $("#dataShow").append('<p>'+countryHistory+'</p>');
 
 
 
