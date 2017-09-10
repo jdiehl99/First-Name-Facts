@@ -50,7 +50,7 @@ jQuery(($) => { // document on ready
                         } else if (countryOrigin == "Dutch") {
                             countryShow = "Netherlands";
                         } else if (countryOrigin == "English") {
-                            countryShow = "England";
+                            countryShow = "United Kingdom";
                         } else if (countryOrigin == "Finnish") {
                             countryShow = "Finland";
                         } else if (countryOrigin == "French") {
