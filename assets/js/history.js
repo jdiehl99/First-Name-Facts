@@ -10,6 +10,7 @@ $(document).ready(function(){
 
     var countryShow = $(this).attr("data-country");
     var countryID = $(this).attr("data-pageID");
+    var flagInfo = $(this).attr("data-flag");
     
 
     var countryHistory;
