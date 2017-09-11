@@ -2,6 +2,7 @@ var countryOrigin = "";
 var countryShow = "";
 var searchTerm = "";
 var countryPageID = "";
+var flagImg = "";
 jQuery(($) => { // document on ready
 
     $(document).on("click", "#doSearch", function () {
@@ -41,6 +42,7 @@ jQuery(($) => { // document on ready
                         if (countryOrigin == "American") {
                             countryShow = "USA";
                             countryPageID = "3434750";
+                            flagImg = "";
                         } else if (countryOrigin == "Catalan") {
                             countryShow = "Catalonia";
                             countryPageID = "6822";
@@ -107,8 +109,8 @@ jQuery(($) => { // document on ready
                     });
                 }
                 // show the country name in the dataShow div on index.html
-
                 $("#dataShow").append('<h1>' + countryShow + '</h1>');
+                // create buttons for MAP, History, and Actors
                 $("#dataShow").append('<button class="btn maps" data-country="'+countryShow+'">MAP</button>');
                 $("#dataShow").append('<button class="btn history" data-pageID="'+countryPageID+'" data-country="'+countryShow+'">HISTORY</button>');
                 $("#dataShow").append('<button class="btn actors" data-name="'+searchTerm+'" data-country="'+countryShow+'">ACTORS</button>');
