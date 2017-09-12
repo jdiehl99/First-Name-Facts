@@ -9,7 +9,9 @@ $(document).ready(function(){
     event.preventDefault();
 
     var countryShow = $(this).attr("data-country");
-
+    var countryID = $(this).attr("data-pageID");
+    var flagInfo = $(this).attr("data-flag");
+    
 
     var countryHistory;
     if(countryShow!=="Unknown"){

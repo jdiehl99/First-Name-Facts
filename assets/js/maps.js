@@ -3,5 +3,7 @@ $(document).on("click", ".maps", function () {
     event.preventDefault();
 
     var countryShow = $(this).attr("data-country");
+    var flagInfo = $(this).attr("data-flag");
+    
     $("#dataShow").append('<p>Maps page - ' + countryShow + ' was passed through from button on Name Page</p>');
 });
