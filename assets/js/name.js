@@ -14,6 +14,7 @@ jQuery(($) => { // document on ready
 
         // grab the name from the input box
         var searchTerm = $("#searchInput").val().trim();
+        validate(searchTerm)
 
         // send the request to BehindTheName using ajax
         $.ajax({
@@ -134,4 +135,16 @@ jQuery(($) => { // document on ready
             }
         });
     });
+
+
+    function validate(term) {
+        if (term == "") {
+            alert("Enter a name");
+            return false;
+        }
+        if (!/^[a-zA-Z]*$/g.test(term)) {
+            alert("Invalid characters");
+            return false;
+        }
+    }
 });
