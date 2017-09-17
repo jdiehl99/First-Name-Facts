@@ -21,6 +21,7 @@
 
 <body>
   <div id="theMap"></div>
+  <!-- need to pass through data attributes for when they return, nothing is lost -->
   <div id="goBack"><a href="index.html"><button>Go Back</button></a></div>
   <script>
     function getSearchParams(k) {
@@ -30,6 +31,7 @@
     }
 
     var countryShow = getSearchParams("data-country");
+    
     var latInfo;
     var longInfo;
     var map;
