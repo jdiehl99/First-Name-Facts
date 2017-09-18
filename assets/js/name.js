@@ -10,11 +10,17 @@ jQuery(($) => { // document on ready
         event.preventDefault();
 
         // empty out the div where the results are displayed
+        $("#countryOrig").empty();        
         $("#dataShow").empty();
 
         // grab the name from the input box
         var searchTerm = $("#searchInput").val().trim();
-        validate(searchTerm)
+
+        //validates the user input to make sure is either a non-empty string or
+        // that there arent any numbers or spaces
+        if (validate(searchTerm)) {
+            console.log("search term is valid");
+        
 
         // send the request to BehindTheName using ajax
         $.ajax({
@@ -126,25 +132,42 @@ jQuery(($) => { // document on ready
                     });
                 }
                 // show the country name in the dataShow div on index.html
-                $("#dataShow").append('<h1>' + countryShow + '</h1>');
+                $("#dataShow").append('<h1 id="countryOrig">' + countryShow + '</h1>');
                 // create buttons for MAP, History, and Actors
-                $("#dataShow").append('<button class="btn maps" data-flag="'+flagImg+'" data-country="'+countryShow+'">MAP</button>');
-                $("#dataShow").append('<button class="btn history" data-flag="'+flagImg+'" data-pageID="'+countryPageID+'" data-country="'+countryShow+'">HISTORY</button>');
-                $("#dataShow").append('<button class="btn actors" data-name="'+searchTerm+'" data-country="'+countryShow+'">ACTORS</button>');
+                $("#dataShow").append('<button class="btn maps" data-flag="' + flagImg + '" data-country="' + countryShow + '">MAP</button>');
+                $("#dataShow").append('<button class="btn history" data-flag="' + flagImg + '" data-pageID="' + countryPageID + '" data-country="' + countryShow + '">HISTORY</button>');
+                $("#dataShow").append('<button class="btn actors" data-name="' + searchTerm + '" data-country="' + countryShow + '">ACTORS</button>');
 
             }
         });
+
+    }//end of search term validator
     });
 
 
     function validate(term) {
         if (term == "") {
-            alert("Enter a name");
+            $("#HistoryOutput").empty();            
+            // alert("Enter a name");
+            $(".errorMg").text("Enter a name please")
+            $(".errorMg").hide()
+            $(".errorMg").fadeIn('slow').animate({
+                opacity: 1.0
+            }, 1500).fadeOut('slow');
             return false;
         }
         if (!/^[a-zA-Z]*$/g.test(term)) {
-            alert("Invalid characters");
+            $("#HistoryOutput").empty();                        
+            // alert("Invalid characters");
+            $(".errorMg").text("Invalid characters")
+            $(".errorMg").hide()
+            $(".errorMg").fadeIn('slow').animate({
+                opacity: 1.0
+            }, 1500).fadeOut('slow');
             return false;
         }
+        return true;
     }
+
+
 });
