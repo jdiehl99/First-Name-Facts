@@ -3,6 +3,8 @@ $(document).ready(function () {
 
         event.preventDefault();
 
+        $("#HistoryOutput").empty();
+        
         var countryShow = $(this).attr("data-country");
         var countryID = $(this).attr("data-pageID");
         var flagInfo = $(this).attr("data-flag");
