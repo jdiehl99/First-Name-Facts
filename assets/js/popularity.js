@@ -9,8 +9,13 @@ $(document).ready(function(){
         method: 'GET',
         }).done(function(response){
         console.log(response);
+        //added the parameters of the name
+        console.log("women:",response.name.given.female.count);
+        console.log("men:",response.name.given.male.count);
+        console.log("average age for women:", response.name.given.female.age.densityCurve.meanAge);
+        console.log("average age for men:", response.name.given.male.age.densityCurve.meanAge);
         })
-         //added the parameters of the name
+         
 
     });
 })
