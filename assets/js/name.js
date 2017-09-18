@@ -10,7 +10,6 @@ jQuery(($) => { // document on ready
         event.preventDefault();
 
         // empty out the div where the results are displayed        
-        $("#dataShow").empty();
         $("#HistoryOutput").empty();
         $(".hero").hide();
 

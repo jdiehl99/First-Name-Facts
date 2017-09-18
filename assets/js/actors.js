@@ -3,7 +3,6 @@ $(document).ready(function () {
 
         event.preventDefault();
 
-        $("#dataShow").empty();
         $("#HistoryOutput").empty();
 
         // get first name from button attribute

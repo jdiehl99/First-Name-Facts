@@ -3,7 +3,6 @@ $(document).ready(function () {
 
         event.preventDefault();
 
-        $("#dataShow").empty();
         $("#HistoryOutput").empty();
         
         var countryShow = $(this).attr("data-country");
