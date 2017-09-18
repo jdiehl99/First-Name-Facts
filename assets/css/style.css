@@ -28,6 +28,9 @@
     }
 }
 
+body {
+    color: #004056;
+}
 div.actorList {
     -webkit-column-count: 3; 
     -moz-column-count: 3; 
@@ -38,4 +41,7 @@ div.actorDisplay {
 }
 .hero-body {
     background-color: #C9FFD5;
+}
+p {
+    padding-bottom: 18px;
 }
