@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $(document).on("click", ".history", function () {
-
+        
         console.log("history button was clicked");
         event.preventDefault();
 
@@ -23,15 +23,13 @@ $(document).ready(function () {
 
                 // console.log(data.query.pages["0"].extract);
                 countryHistory = data.query.pages["0"];
-                console.log(countryHistory.extract);
-                $("#HistoryOutput").empty();
+                // console.log(countryHistory.extract);
                 $("#HistoryOutput").append(countryHistory.extract);
             })
 
 
         } else {
             countryHistory = "Unknown Origin"
-            $("#HistoryOutput").empty();
             $("#HistoryOutput").append(countryHistory);
 
         }
