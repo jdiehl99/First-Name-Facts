@@ -1,6 +1,8 @@
 $(document).ready(function () {
     $(document).on("click", ".actors", function () {
         event.preventDefault();
+        $("#dataShow").empty();
+        $("#HistoryOutput").empty();
 
         // get first name from button attribute
         var searchTerm = $(this).attr("data-name");
