@@ -9,8 +9,7 @@ jQuery(($) => { // document on ready
         console.log("search button was clicked");
         event.preventDefault();
 
-        // empty out the div where the results are displayed
-        $("#countryOrig").empty();        
+        // empty out the div where the results are displayed        
         $("#dataShow").empty();
 
         // grab the name from the input box
