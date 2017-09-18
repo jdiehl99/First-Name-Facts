@@ -1,7 +1,4 @@
 $(document).ready(function () {
-
-
-
     $(document).on("click", ".history", function () {
         
         console.log("history button was clicked");
@@ -39,7 +36,4 @@ $(document).ready(function () {
 
 
     });
-
-
-
 });

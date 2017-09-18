@@ -133,9 +133,10 @@ jQuery(($) => { // document on ready
                 // show the country name in the dataShow div on index.html
                 $("#dataShow").append('<h1 id="countryOrig">' + countryShow + '</h1>');
                 // create buttons for MAP, History, and Actors
-                $("#dataShow").append('<button class="btn maps" data-flag="' + flagImg + '" data-country="' + countryShow + '">MAP</button>');
-                $("#dataShow").append('<button class="btn history" data-flag="' + flagImg + '" data-pageID="' + countryPageID + '" data-country="' + countryShow + '">HISTORY</button>');
-                $("#dataShow").append('<button class="btn actors" data-name="' + searchTerm + '" data-country="' + countryShow + '">ACTORS</button>');
+                $("#dataShow").append('<a href="map.html?data-country='+countryShow+'"><button class="maps">MAP</button></a>');    
+                // $("#dataShow").append('<button class="btn maps" data-flag="'+flagImg+'" data-country="'+countryShow+'">MAP</button>');
+                $("#dataShow").append('<button class="btn history" data-flag="'+flagImg+'" data-pageID="'+countryPageID+'" data-country="'+countryShow+'">HISTORY</button>');
+                $("#dataShow").append('<button class="btn actors" data-name="'+searchTerm+'" data-country="'+countryShow+'">ACTORS</button>');
 
             }
         });
