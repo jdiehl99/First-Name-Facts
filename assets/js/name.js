@@ -3,9 +3,16 @@ var countryShow = "";
 var searchTerm = "";
 var countryPageID = "";
 var flagImg = "";
+
+var latInfo;
+var longInfo;
+
+
 jQuery(($) => { // document on ready
 
     $(document).on("click", "#doSearch", function () {
+
+       
         console.log("search button was clicked");
         event.preventDefault();
 
@@ -130,13 +137,35 @@ jQuery(($) => { // document on ready
                         }
                     });
                 }
+
+                // call to google api to get geo location (lat , long)
+                var mapQuery = "https://maps.googleapis.com/maps/api/geocode/json?address=" + countryShow + "&key=AIzaSyDrHgJVlCVFzRNb_R4wjMg38LyZOxsIF4k";
+                
+                  console.log("country", countryShow);
+                  console.log("query", mapQuery);
+                
+                
+                  $.ajax({
+                    url: mapQuery,
+                    method: 'GET'
+                  }).done(function (response) {
+                    console.log(response);
+                    // grab latitude and longitude from results and put into variables
+                    latInfo = response.results["0"].geometry.location.lat;
+                    longInfo = response.results["0"].geometry.location.lng;
+                    console.log("lat", latInfo);
+                    console.log("long", longInfo);
+
+                  
                 // show the country name in the dataShow div on index.html
                 $("#dataShow").append('<h1 id="countryOrig">' + countryShow + '</h1>');
                 // create buttons for MAP, History, and Actors
-                $("#dataShow").append('<a href="map.html?data-country='+countryShow+'"><button class="maps">MAP</button></a>');    
-                // $("#dataShow").append('<button class="btn maps" data-flag="'+flagImg+'" data-country="'+countryShow+'">MAP</button>');
+                // $("#dataShow").append('<a href="map.html?data-country='+countryShow+'"><button class="maps" onclick="initMap()">MAP</button></a>');    
+                $("#dataShow").append('<button class="btn maps" data-lat="'+latInfo+'"data-long="'+longInfo+'" data-flag="'+flagImg+'" data-country="'+countryShow+'">MAP</button>');
                 $("#dataShow").append('<button class="btn history" data-flag="'+flagImg+'" data-pageID="'+countryPageID+'" data-country="'+countryShow+'">HISTORY</button>');
                 $("#dataShow").append('<button class="btn actors" data-name="'+searchTerm+'" data-country="'+countryShow+'">ACTORS</button>');
+                
+            });
 
             }
         });

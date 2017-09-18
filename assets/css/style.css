@@ -30,3 +30,8 @@ div.actorList {
 div.actorDisplay {
     break-before: column;
 }
+
+#theMap{
+    height: 400px;
+    width: 85%;
+}
