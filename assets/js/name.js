@@ -133,12 +133,12 @@ jQuery(($) => { // document on ready
                     });
                 }
                 // show the country name in the dataShow div on index.html
-                $("#dataShow").append('<h1 class="countryOrig">Your name originates from: ' + countryShow + '</h1>'); 
+                $("#buttonsDiv").append('<h1 class="countryOrig">Your name originates from: ' + countryShow + '</h1>'); 
                 // create buttons for MAP, History, and Actors
-                $("#dataShow").append('<a href="map.html?data-country='+countryShow+'"><button class="maps button is-primary">MAP</button></a>');    
-                // $("#dataShow").append('<button class="btn maps button is-primary" data-flag="'+flagImg+'" data-country="'+countryShow+'">MAP</button>');
-                $("#dataShow").append('<button class="btn history button is-primary" data-flag="'+flagImg+'" data-pageID="'+countryPageID+'" data-country="'+countryShow+'">HISTORY</button>');
-                $("#dataShow").append('<button class="btn actors button is-primary" data-name="'+searchTerm+'" data-country="'+countryShow+'">ACTORS</button>');
+                $("#buttonsDiv").append('<a href="map.html?data-country='+countryShow+'"><button class="maps button is-primary">MAP</button></a>');    
+                // $("#buttonsDiv").append('<button class="btn maps button is-primary" data-flag="'+flagImg+'" data-country="'+countryShow+'">MAP</button>');
+                $("#buttonsDiv").append('<button class="btn history button is-primary" data-flag="'+flagImg+'" data-pageID="'+countryPageID+'" data-country="'+countryShow+'">HISTORY</button>');
+                $("#buttonsDiv").append('<button class="btn actors button is-primary" data-name="'+searchTerm+'" data-country="'+countryShow+'">ACTORS</button>');
 
             }
         });
