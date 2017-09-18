@@ -1,9 +1,10 @@
 $(document).ready(function () {
     $(document).on("click", ".history", function () {
-        
-        console.log("history button was clicked");
+
         event.preventDefault();
 
+        $("#HistoryOutput").empty();
+        
         var countryShow = $(this).attr("data-country");
         var countryID = $(this).attr("data-pageID");
         var flagInfo = $(this).attr("data-flag");
@@ -24,7 +25,11 @@ $(document).ready(function () {
                 // console.log(data.query.pages["0"].extract);
                 countryHistory = data.query.pages["0"];
                 // console.log(countryHistory.extract);
-                $("#HistoryOutput").append(countryHistory.extract);
+                $("#HistoryOutput").html(countryHistory.extract);
+                $('#HistoryOutput').collapser({
+                    mode: 'chars',
+                    truncate: 400
+                });
             })
 
 
@@ -33,7 +38,7 @@ $(document).ready(function () {
             $("#HistoryOutput").append(countryHistory);
 
         }
-
+        
 
     });
 });

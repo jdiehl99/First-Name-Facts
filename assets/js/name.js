@@ -17,7 +17,8 @@ jQuery(($) => { // document on ready
         event.preventDefault();
 
         // empty out the div where the results are displayed        
-        $("#dataShow").empty();
+        $("#HistoryOutput").empty();
+        $(".hero").hide();
 
         // grab the name from the input box
         var searchTerm = $("#searchInput").val().trim();
@@ -158,7 +159,8 @@ jQuery(($) => { // document on ready
 
                   
                 // show the country name in the dataShow div on index.html
-                $("#dataShow").append('<h1 id="countryOrig">' + countryShow + '</h1>');
+                $("#dataShow").append('<h1 class="countryOrig">Your name originates from: ' + countryShow + '</h1>'); 
+                    
                 // create buttons for MAP, History, and Actors
                 // $("#dataShow").append('<a href="map.html?data-country='+countryShow+'"><button class="maps" onclick="initMap()">MAP</button></a>');    
                 $("#dataShow").append('<button class="btn maps" data-lat="'+latInfo+'"data-long="'+longInfo+'" data-flag="'+flagImg+'" data-country="'+countryShow+'">MAP</button>');
@@ -166,6 +168,7 @@ jQuery(($) => { // document on ready
                 $("#dataShow").append('<button class="btn actors" data-name="'+searchTerm+'" data-country="'+countryShow+'">ACTORS</button>');
                 
             });
+            
 
             }
         });
