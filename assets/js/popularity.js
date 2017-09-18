@@ -14,6 +14,10 @@ $(document).ready(function(){
         console.log("men:",response.name.given.male.count);
         console.log("average age for women:", response.name.given.female.age.densityCurve.meanAge);
         console.log("average age for men:", response.name.given.male.age.densityCurve.meanAge);
+        $("#dataShow").append("women:",response.name.given.female.count);
+        $("#dataShow").append("men:",response.name.given.male.count);
+        $("#dataShow").append("average age for women:", response.name.given.female.age.densityCurve.meanAge);
+        $("#dataShow").append("average age for men:", response.name.given.male.age.densityCurve.meanAge);
         })
          
 
