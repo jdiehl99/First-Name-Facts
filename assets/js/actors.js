@@ -1,14 +1,14 @@
 $(document).ready(function () {
     $(document).on("click", ".actors", function () {
+
         event.preventDefault();
+
         $("#dataShow").empty();
         $("#HistoryOutput").empty();
 
         // get first name from button attribute
         var searchTerm = $(this).attr("data-name");
 
-        // hide the buttonsDiv
-        $("#buttonsDiv").hide();
         // create the queryURL to request the data
         var queryURL = 'https://api.themoviedb.org/3/search/person?api_key=0b67c20dc0c60917a8d87eb35c0cd032&language=en-US&query=' + searchTerm + '&page=1&include_adult=false';
 
@@ -30,7 +30,7 @@ $(document).ready(function () {
                 }
                 udiv.append('<div><h3>' + data[i].name + '</h3><img src="' + imgShow + '"></div>');
             }
-            $("#dataShow").append(udiv);    // add the list to the dataShow div
+            $("#HistoryOutput").append(udiv);    // add the list to the dataShow div
         });
 
     });

@@ -133,7 +133,7 @@ jQuery(($) => { // document on ready
                     });
                 }
                 // show the country name in the dataShow div on index.html
-                $("#buttonsDiv").append('<h1 class="countryOrig">Your name originates from: ' + countryShow + '</h1>'); 
+                $("#dataShow").append('<h1 class="countryOrig">Your name originates from: ' + countryShow + '</h1>'); 
                 // create buttons for MAP, History, and Actors
                 $("#buttonsDiv").append('<a href="map.html?data-country='+countryShow+'"><button class="maps button is-primary">MAP</button></a>');    
                 // $("#buttonsDiv").append('<button class="btn maps button is-primary" data-flag="'+flagImg+'" data-country="'+countryShow+'">MAP</button>');
