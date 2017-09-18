@@ -1,35 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="assets/css/reset.css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.css">   
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.css">
+    <script src="jquery-collapser-master/jquery.collapser.min.js"></script>
+    <script src="jquery-collapser-master/jquery.collapser.js"></script>
     <!-- <link rel="icon" href=""> -->
     <link href="assets/css/style.css" rel="stylesheet">
     <title>The origin of your name</title>
 </head>
+
 <body>
-    <!--added a navbar-->
-    <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Maps</a></li>
-            <li><a href="#">History</a></li>
-            <li><a href="#">Actors</a></li>
-        </ul>
-    </nav>
     <!--added a title/hero section that explains the purpose-->
     <section class="hero is-light">
         <div class="hero-body">
             <div class="container">
                 <h1 class="title">
-                  Know Yourself
+                    Know Yourself
                 </h1>
                 <h2 class="subtitle">
-                  Learn more about your personal history starting with your name! When you enter your name in the box below, you will be given the origin country and history of your name. You will also see if you share the same name as any famous people of today or yesterday. 
+                    Learn more about your personal history starting with your first name! When you enter your name in the box below, you will be given
+                    the origin country and history of your name. You will also see if you share the same name as any famous
+                    people of today or yesterday.
                 </h2>
             </div>
         </div>
@@ -38,29 +36,28 @@
     <br>
     <div class="columns">
         <div class="column is-half">
-        <div class="field">
-            <label class="label">Name</label>
-            <div class="control">
-                <input class="input" type="text" id="searchInput" placeholder="Enter your name here">
+            <div class="field">
+                <label class="label">Name</label>
+                <div class="control">
+                    <input class="input is-primary is-outlined" type="text" id="searchInput" placeholder="Enter your first name here">
+                </div>
             </div>
-        </div>
         </div>
     </div>
     <div class="columns">
         <div class="column is-half">
-        <div class="field">
-            <div class="control">
-                <input class="button" type="submit" id="doSearch" value="Submit"> 
+            <div class="field">
+                <div class="control">
+                    <input class="button is-primary is-outlined" type="submit" id="doSearch" value="Submit">
+                </div>
             </div>
         </div>
-        </div>
     </div>
-        <div id="buttonsDiv"></div>
-        <div id="dataShow"></div>
-        <div class="errorMg"></div>
-        <div id="weatherOutput"></div>
-        <div id="HistoryOutput"></div>
-    
+    <div id="buttonsDiv"></div>
+    <div id="dataShow"></div>
+    <div class="errorMg"></div>
+    <div id="weatherOutput"></div>
+    <div id="HistoryOutput"></div>
 
     <script type="text/javascript" src="assets/js/name.js"></script>
     <script type="text/javascript" src="assets/js/map.js"></script>
@@ -68,4 +65,5 @@
     <script type="text/javascript" src="assets/js/actors.js"></script>
 
 </body>
+
 </html>
