@@ -33,7 +33,7 @@ $(document).ready(function () {
             $("#HistoryOutput").append(countryHistory);
 
         }
-
+        
 
     });
 });
