@@ -34,7 +34,6 @@ $(document).ready(function () {
                     var imgShow = 'https://image.tmdb.org/t/p/w92/' + data[i].profile_path;
                     udiv.append('<div><h3>' + data[i].name + '</h3><img src="' + imgShow + '"></div>');
                 }
-                
             }
             $("#buttonOutput").append(udiv);    // add the list to the dataShow div
         });
