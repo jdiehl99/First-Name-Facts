@@ -27,13 +27,12 @@ $(document).ready(function () {
             var data = response.results;
             udiv = $('<div class="actorList">');
             for (var i = 0; i < data.length; i++) {
-                if (data[i].profile_path == null) {
-                    // if there is no photo, hide the actor information
-                    var noShow = "";
-                } else {
+                if (data[i].profile_path != null) {
                     // show image from TMDB
                     var imgShow = 'https://image.tmdb.org/t/p/w92/' + data[i].profile_path;
-                    udiv.append('<figure><img src="' + imgShow + '" class="actorimg"><figcaption>' + data[i].name + '</figcaption></figure>');
+                    udiv.append('<figure>');
+                    udiv.append('<a href="https://www.themoviedb.org/search?query='+data[i].name+'" target="_blank"><img src="' + imgShow + '" class="actorimg"></a>');
+                    udiv.append('<figcaption>' + data[i].name + '</figcaption>');
                 }
             }
             $("#buttonOutput").append(udiv);    // add the list to the dataShow div
