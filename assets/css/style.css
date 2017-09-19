@@ -24,6 +24,13 @@ Light - #ebfdd4
     #ngramData {
         display: none;
     }
+
+    .flags{
+        width: 200px;
+        height: 120px;
+        float: left;
+    }
+
 }
 
 @media print {
@@ -48,6 +55,7 @@ div.actorDisplay {
 }
 
 #theMap {
+    margin: 0 auto;
     height: 400px;
     width: 85%;
 }
