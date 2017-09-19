@@ -24,9 +24,12 @@ $(document).ready(function () {
             for (var i = 0; i < data.length; i++) {
                 if (data[i].profile_path == null) {
                     // if there is no photo, show the placeholder image
+                    console.log("there's no image");
                     var imgShow = "assets/images/noimage.png";
+                    
                 } else {
                     // show image from TMDB
+                    console.log("there is an image");
                     var imgShow = 'https://image.tmdb.org/t/p/w92/' + data[i].profile_path;
                 }
                 udiv.append('<div><h3>' + data[i].name + '</h3><img src="' + imgShow + '"></div>');
