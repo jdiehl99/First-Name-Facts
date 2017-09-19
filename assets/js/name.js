@@ -6,7 +6,7 @@ var flagImg = "";
 
 var latInfo;
 var longInfo;
-
+$("#theMap").hide();
 
 jQuery(($) => { // document on ready
 

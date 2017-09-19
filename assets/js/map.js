@@ -7,6 +7,7 @@ $(document).ready(function () {
     $("#buttonOutput").empty();
     $("#ngramData").empty();
     $("#theMap").empty();
+    $("#theMap").show();
 
     var latval = parseInt($(this).attr("data-lat"));
     var longval = parseInt($(this).attr("data-long"));
