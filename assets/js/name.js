@@ -27,7 +27,7 @@ jQuery(($) => { // document on ready
         $(".hero").hide();
 
         // grab the name from the input box
-        var searchTerm = $("#searchInput").val().trim();
+        var searchTerm = $(".searchInput").val().trim();
 
         //validates the user input to make sure is either a non-empty string or
         // that there arent any numbers or spaces
@@ -169,9 +169,10 @@ jQuery(($) => { // document on ready
                     
                 // create buttons for MAP, History, and Actors
                 // $("#dataShow").append('<a href="map.html?data-country='+countryShow+'"><button class="maps" onclick="initMap()">MAP</button></a>');    
-                $("#buttonsDiv").append('<button class="btn maps" data-lat="'+latInfo+'"data-long="'+longInfo+'" data-flag="'+flagImg+'" data-country="'+countryShow+'">MAP</button>');
-                $("#buttonsDiv").append('<button class="btn history" data-flag="'+flagImg+'" data-pageID="'+countryPageID+'" data-country="'+countryShow+'">HISTORY</button>');
-                $("#buttonsDiv").append('<button class="btn actors" data-name="'+searchTerm+'" data-country="'+countryShow+'">ACTORS</button>');
+                $("#buttonsDiv").append('<button id="doSearch" class="btn name" searchInput="'+searchTerm+'" data-lat="'+latInfo+'"data-long="'+longInfo+'" data-flag="'+flagImg+'" data-country="'+countryShow+'">MAP</button>');
+                $("#buttonsDiv").append('<button class="btn maps" searchInput="'+searchTerm+'" data-lat="'+latInfo+'"data-long="'+longInfo+'" data-flag="'+flagImg+'" data-country="'+countryShow+'">MAP</button>');
+                $("#buttonsDiv").append('<button class="btn history" searchInput="'+searchTerm+'" data-flag="'+flagImg+'" data-pageID="'+countryPageID+'" data-country="'+countryShow+'">HISTORY</button>');
+                $("#buttonsDiv").append('<button class="btn actors" searchInput="'+searchTerm+'" data-name="'+searchTerm+'" data-country="'+countryShow+'">ACTORS</button>');
                 
             });
             
@@ -188,7 +189,7 @@ jQuery(($) => { // document on ready
 
     function validate(term) {
         if (term == "") {
-            $("#HistoryOutput").empty();            
+            $("#buttonOutput").empty();            
             // alert("Enter a name");
             $(".errorMg").text("Enter a name please")
             $(".errorMg").hide()
