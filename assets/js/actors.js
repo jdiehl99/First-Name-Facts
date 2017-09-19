@@ -19,14 +19,15 @@ $(document).ready(function () {
             method: 'GET'
         }).done(function (response) {
             // go through results and display list of names
+            console.log(response);
             var data = response.results;
             udiv = $('<div class="actorList">');
             for (var i = 0; i < data.length; i++) {
                 if (data[i].profile_path == null) {
-                    // if there is no photo, show the placeholder image
+                    // if there is no photo, hide the actor information
                     console.log("there's no image");
-                    var imgShow = "assets/images/noimage.png";
-                    
+                    var noShow = "";
+                    //console.log("I've hidden the image");
                 } else {
                     // show image from TMDB
                     console.log("there is an image");
