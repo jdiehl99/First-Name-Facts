@@ -11,6 +11,7 @@ $(document).ready(function () {
         var countryID = $(this).attr("data-pageID");
         var flagInfo = $(this).attr("data-flag");
         var countryHistory;
+        var imgTag;
 
         if (countryShow !== "Unknown") {
 
@@ -24,19 +25,23 @@ $(document).ready(function () {
                 method: "GET"
             }).done(function (data) {
 
-                // console.log(data.query.pages["0"].extract);
                 countryHistory = data.query.pages["0"];
-                // console.log(countryHistory.extract);
                 $("#buttonOutput").html(countryHistory.extract);
                 $('#buttonOutput').collapser({
                     mode: 'chars',
-                    truncate: 400
+                    truncate: 600
                 });
+
+
+                imgTag=$("<img class='flags'>")
+                imgTag.attr("src","assets/images/flags-normal/"+flagInfo);
+                $("#buttonOutput").prepend(imgTag); 
+              
             })
 
 
         } else {
-            countryHistory = "Unknown Origin"
+            countryHistory = "Unknown Origin"           
             $("#buttonOutput").append(countryHistory);
 
         }
