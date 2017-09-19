@@ -60,6 +60,10 @@ div.actorDisplay {
     border: 4px solid #b1f6cb;
     width: 90%;
 }
+/*added the imput box changes*/
+div.control input.searchInput{
+    width: 60%;
+}
 .flags{
     width: 250px;
     height: 180px;
