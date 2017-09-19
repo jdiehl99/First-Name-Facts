@@ -3,6 +3,8 @@ $(document).ready(function () {
 
         event.preventDefault();
         // empty out any data still showing from other buttons
+        $("#dataShow").show();
+        $("#popData").hide();
         $("#buttonOutput").empty();
         $("#ngramData").empty();
         $("#theMap").empty();
@@ -29,7 +31,7 @@ $(document).ready(function () {
                 $("#buttonOutput").html(countryHistory.extract);
                 $('#buttonOutput').collapser({
                     mode: 'chars',
-                    truncate: 600
+                    truncate: 1100
                 });
 
 

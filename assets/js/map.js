@@ -4,6 +4,8 @@ $(document).ready(function () {
   $(document).on("click", ".maps", function (e) {
     e.preventDefault();
     // empty out any data still showing from other buttons
+    $("#dataShow").show();
+    $("#popData").hide();
     $("#buttonOutput").empty();
     $("#ngramData").empty();
     $("#theMap").empty();
