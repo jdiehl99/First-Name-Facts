@@ -1,25 +1,30 @@
-$(document).ready(function(){
-
-    
-    $(document).on("click", ".maps", function (e) {
-        e.preventDefault();
-     var latval= parseInt($(this).attr("data-lat"));
-     var longval=parseInt($(this).attr("data-long"));
-        initMap(latval,longval);
-        
-
-    })
+$(document).ready(function () {
 
 
-  function initMap(lat,long) {
+  $(document).on("click", ".maps", function (e) {
+    e.preventDefault();
+    // empty out any data still showing from other buttons
+    $("#buttonOutput").empty();
+    $("#ngramData").empty();
+    $("#theMap").empty();
+
+    var latval = parseInt($(this).attr("data-lat"));
+    var longval = parseInt($(this).attr("data-long"));
+    initMap(latval, longval);
+
+
+  })
+
+
+  function initMap(lat, long) {
     map = new google.maps.Map(document.getElementById('theMap'), {
       center: { lat: lat, lng: long },
       zoom: 4
     });
     var marker = new google.maps.Marker({
-        position: { lat: lat, lng: long },
-        map: map
-      });
+      position: { lat: lat, lng: long },
+      map: map
+    });
   }
 
 

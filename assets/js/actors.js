@@ -2,8 +2,10 @@ $(document).ready(function () {
     $(document).on("click", ".actors", function () {
 
         event.preventDefault();
-
-        $("#HistoryOutput").empty();
+        // empty out any data still showing from other buttons
+        $("#buttonOutput").empty();
+        $("#ngramData").empty();
+        $("#theMap").empty();
 
         // get first name from button attribute
         var searchTerm = $(this).attr("data-name");
@@ -29,7 +31,7 @@ $(document).ready(function () {
                 }
                 udiv.append('<div><h3>' + data[i].name + '</h3><img src="' + imgShow + '"></div>');
             }
-            $("#HistoryOutput").append(udiv);    // add the list to the dataShow div
+            $("#buttonOutput").append(udiv);    // add the list to the dataShow div
         });
 
     });

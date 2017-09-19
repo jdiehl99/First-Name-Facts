@@ -17,7 +17,13 @@ jQuery(($) => { // document on ready
         event.preventDefault();
 
         // empty out the div where the results are displayed        
-        $("#HistoryOutput").empty();
+        $("#buttonOutput").empty();
+        $("#dataShow").empty();
+        $("#ngramData").empty();
+        $("#theMap").empty();
+        // empty an previous buttons
+        $("#buttonsDiv").empty();
+        // hide title header
         $(".hero").hide();
 
         // grab the name from the input box
@@ -163,9 +169,9 @@ jQuery(($) => { // document on ready
                     
                 // create buttons for MAP, History, and Actors
                 // $("#dataShow").append('<a href="map.html?data-country='+countryShow+'"><button class="maps" onclick="initMap()">MAP</button></a>');    
-                $("#dataShow").append('<button class="btn maps" data-lat="'+latInfo+'"data-long="'+longInfo+'" data-flag="'+flagImg+'" data-country="'+countryShow+'">MAP</button>');
-                $("#dataShow").append('<button class="btn history" data-flag="'+flagImg+'" data-pageID="'+countryPageID+'" data-country="'+countryShow+'">HISTORY</button>');
-                $("#dataShow").append('<button class="btn actors" data-name="'+searchTerm+'" data-country="'+countryShow+'">ACTORS</button>');
+                $("#buttonsDiv").append('<button class="btn maps" data-lat="'+latInfo+'"data-long="'+longInfo+'" data-flag="'+flagImg+'" data-country="'+countryShow+'">MAP</button>');
+                $("#buttonsDiv").append('<button class="btn history" data-flag="'+flagImg+'" data-pageID="'+countryPageID+'" data-country="'+countryShow+'">HISTORY</button>');
+                $("#buttonsDiv").append('<button class="btn actors" data-name="'+searchTerm+'" data-country="'+countryShow+'">ACTORS</button>');
                 
             });
             
@@ -174,6 +180,9 @@ jQuery(($) => { // document on ready
         });
 
     }//end of search term validator
+
+    $('#ngramData').html('<iframe name="ngram_chart" src="https://books.google.com/ngrams/interactive_chart?content='+searchTerm+'&year_start=1800&year_end=2008&corpus=0&smoothing=3&share=&direct_url=t1%3B%2C'+searchTerm+'%3B%2Cc0" width="100%" height="500px" marginwidth=0 marginheight=0 hspace=0 vspace=0 frameborder=0 scrolling=no></iframe>');
+
     });
 
 
