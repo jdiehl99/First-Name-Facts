@@ -40,10 +40,10 @@ div.actorDisplay {
 #theMap{
     height: 400px;
     width: 85%;
-
-.hero-body {
-    background-color: #C9FFD5;
 }
+.hero-body {
+        background-color: #C9FFD5;
+    }
 p {
     padding-bottom: 18px;
 }
