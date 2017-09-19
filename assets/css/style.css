@@ -94,6 +94,10 @@ h1.countryOrig {
     border-bottom: 4px solid #b1f6cb;
     height: 30px;
 }
+#control{
+    width: 100px;
+    float: right;
+}
 
 a.btn {
     margin: 0 40px 0 10px;
