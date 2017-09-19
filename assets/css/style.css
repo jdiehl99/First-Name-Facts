@@ -60,6 +60,11 @@ div.actorDisplay {
     border: 4px solid #b1f6cb;
     width: 90%;
 }
+.flags{
+    width: 250px;
+    height: 180px;
+    float: right;
+}
 #dataShow, #buttonOutput {
     padding: 20px;
 }
