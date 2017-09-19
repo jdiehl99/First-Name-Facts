@@ -86,8 +86,10 @@ h1.countryOrig {
 
 #buttonsDiv {
     background-color: #bef8cf;
+    border-bottom: 4px solid #b1f6cb;
+    height: 30px;
 }
 
-button {
-    margin: 40px;
+a.btn {
+    margin: 0 40px 0 10px;
 }
