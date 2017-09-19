@@ -9,7 +9,8 @@
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous"></script>
-   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrHgJVlCVFzRNb_R4wjMg38LyZOxsIF4k&sensor=false">
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrHgJVlCVFzRNb_R4wjMg38LyZOxsIF4k&sensor=false">
+
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.css">
     <script src="jquery-collapser-master/jquery.collapser.min.js"></script>
@@ -20,48 +21,38 @@
 </head>
 
 <body>
-    <!--added a title/hero section that explains the purpose-->
-    <section class="hero is-light">
-        <div class="hero-body">
-            <div class="container">
+    <div class="container">
+        <!-- navbar for buttons and search -->
+        <div id="buttonsDiv"></div>
+        <!-- main div for body -->
+        <section class="hero is-light">
+            <div class="hero-body">
                 <h1 class="title">
                     Know Yourself
                 </h1>
                 <h2 class="subtitle">
-                    Learn more about your personal history starting with your first name! When you enter your name in the box below, you will be given
-                    the origin country and history of your name. You will also see if you share the same name as any famous
-                    people of today or yesterday.
+                    Learn more about your personal history starting with your first name! When you enter your name in the box below, you will
+                    be given the origin country and history of your name. You will also see if you share the same name as
+                    any famous people of today or yesterday.
                 </h2>
             </div>
-        </div>
-    </section>
-    <!--where you enter the name and the submit button-->
-    <br>
-    <div class="columns">
-        <div class="column is-half">
-            <div class="field">
-                <label class="label">Name</label>
-                <div class="control">
-                    <input value="jane" class="input is-primary is-outlined" type="text" id="searchInput" placeholder="Enter your first name here">
-                </div>
+        </section>
+        <!--where you enter the name and the submit button-->
+        <div id="mainSearch">
+            <div class="control">
+                <input value="jane" class="input is-primary is-outlined searchInput" type="text" placeholder="Enter your first name here">
+            </div>
+            <div class="control">
+                <input class="button is-primary is-outlined" type="submit" id="doSearch" value="Submit">
             </div>
         </div>
+        <div id="dataShow"></div>
+        <div id="ngramData"></div>
+        <div class="errorMg"></div>
+        <div id="buttonOutput"></div>
+        <div id="theMap"></div>
     </div>
-    <div class="columns">
-        <div class="column is-half">
-            <div class="field">
-                <div class="control">
-                    <input class="button is-primary is-outlined" type="submit" id="doSearch" value="Submit">
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="dataShow"></div>
-    <div id="buttonsDiv"></div>
-    <div id="ngramData"></div>
-    <div class="errorMg"></div>
-    <div id="buttonOutput"></div>
-    <div id="theMap"></div>
+    <!-- end main div-->
 
     <script type="text/javascript" src="assets/js/name.js"></script>
     <script type="text/javascript" src="assets/js/history.js"></script>
@@ -70,5 +61,5 @@
     <script type="text/javascript" src="assets/js/popularity.js"></script>
 
 </body>
-</html>
 
+</html>
