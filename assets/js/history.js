@@ -28,7 +28,7 @@ $(document).ready(function () {
             }).done(function (data) {
 
                 countryHistory = data.query.pages["0"];
-                $("#buttonOutput").html(countryHistory.extract);
+                $("#buttonOutput").append(countryHistory.extract);
                 $('#buttonOutput').collapser({
                     mode: 'chars',
                     truncate: 1100
