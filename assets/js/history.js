@@ -2,9 +2,11 @@ $(document).ready(function () {
     $(document).on("click", ".history", function () {
 
         event.preventDefault();
+        // empty out any data still showing from other buttons
+        $("#buttonOutput").empty();
+        $("#ngramData").empty();
+        $("#theMap").empty();
 
-        $("#HistoryOutput").empty();
-        
         var countryShow = $(this).attr("data-country");
         var countryID = $(this).attr("data-pageID");
         var flagInfo = $(this).attr("data-flag");
@@ -25,8 +27,8 @@ $(document).ready(function () {
                 // console.log(data.query.pages["0"].extract);
                 countryHistory = data.query.pages["0"];
                 // console.log(countryHistory.extract);
-                $("#HistoryOutput").html(countryHistory.extract);
-                $('#HistoryOutput').collapser({
+                $("#buttonOutput").html(countryHistory.extract);
+                $('#buttonOutput').collapser({
                     mode: 'chars',
                     truncate: 400
                 });
@@ -35,10 +37,10 @@ $(document).ready(function () {
 
         } else {
             countryHistory = "Unknown Origin"
-            $("#HistoryOutput").append(countryHistory);
+            $("#buttonOutput").append(countryHistory);
 
         }
-        
+
 
     });
 });
