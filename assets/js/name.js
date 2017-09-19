@@ -27,7 +27,7 @@ jQuery(($) => { // document on ready
         $("#ngramData").empty();
         $("#theMap").empty();
         $("#buttonsDiv").empty();
-        $(".control").hide();
+        $("#mainSearch").hide();
 
         // hide title header
         $(".hero").hide();
