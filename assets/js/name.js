@@ -184,7 +184,8 @@ jQuery(($) => { // document on ready
                         $("#buttonsDiv").append('<a href="#" class="btn maps" searchInput="' + searchTerm + '" data-lat="' + latInfo + '"data-long="' + longInfo + '" data-flag="' + flagImg + '" data-country="' + countryShow + '">MAP</a>');
                         $("#buttonsDiv").append('<a href="#" class="btn history" searchInput="' + searchTerm + '" data-flag="' + flagImg + '" data-pageID="' + countryPageID + '" data-country="' + countryShow + '">HISTORY</a>');
                         $("#buttonsDiv").append('<a href="#" class="btn actors" searchInput="' + searchTerm + '" data-name="' + searchTerm + '" data-country="' + countryShow + '">ACTORS</a>');
-
+                        $("#buttonsDiv").append('<div class="control" input class="input" type="text" placeholder="' + searchTerm + '"></div>')
+                            //console.log("i'm a search box")
                     });
 
 
