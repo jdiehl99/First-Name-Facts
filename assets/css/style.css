@@ -36,6 +36,11 @@ div.actorList {
 div.actorDisplay {
     break-before: column;
 }
+
+#theMap{
+    height: 400px;
+    width: 85%;
+
 .hero-body {
     background-color: #C9FFD5;
 }
