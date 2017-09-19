@@ -63,3 +63,9 @@ h1.countryOrig {
 button{
     margin: 40px;
 }
+
+.flags{
+    width: 250px;
+    height: 180px;
+    float: right;
+}
