@@ -10,6 +10,8 @@ var longInfo;
 $("#buttonsDiv").hide();
 // hide map div unless we are on maps page
 $("#theMap").hide();
+// hide error div until call upon 
+$(".errorMg").hide()
 
 jQuery(($) => { // document on ready
 
@@ -23,8 +25,9 @@ jQuery(($) => { // document on ready
         $("#buttonsDiv").show();
         // empty out the div where the results are displayed        
         $("#buttonOutput").empty();
-        $("#dataShow").empty();
-        $("#ngramData").empty();
+        $("#dataShow").hide();
+        $("#popData").hide()
+        $("#ngramData").hide();
         $("#theMap").empty();
         $("#buttonsDiv").empty();
 
@@ -39,7 +42,10 @@ jQuery(($) => { // document on ready
         if (validate(searchTerm)) {
             console.log("search term is valid");
 
-
+            //show graph if search is good
+            $("#ngramData").show();
+            $("#dataShow").show();
+            $("#popData").show();
             // send the request to BehindTheName using ajax
             $.ajax({
                 type: "GET",
@@ -170,7 +176,7 @@ jQuery(($) => { // document on ready
 
 
                         // show the country name in the dataShow div on index.html
-                        $("#dataShow").append('<h1 class="countryOrig">Your name originates from: ' + countryShow + '</h1>');
+                        $("#dataShow").html('<h1 class="countryOrig">Your name originates from: ' + countryShow + '</h1>');
 
                         // create buttons for MAP, History, and Actors
                         // $("#buttonsDiv").append('<button id="doSearch" class="btn name" searchInput="' + searchTerm + '" data-lat="' + latInfo + '"data-long="' + longInfo + '" data-flag="' + flagImg + '" data-country="' + countryShow + '">MAP</button>');
@@ -190,29 +196,59 @@ jQuery(($) => { // document on ready
                 }
             });
 
-        }//end of search term validator
+        } //end of search term validator
 
         $('#ngramData').html('<iframe name="ngram_chart" src="https://books.google.com/ngrams/interactive_chart?content=' + searchTerm + '&year_start=1800&year_end=2008&corpus=0&smoothing=3&share=&direct_url=t1%3B%2C' + searchTerm + '%3B%2Cc0" width="100%" height="500px" marginwidth=0 marginheight=0 hspace=0 vspace=0 frameborder=0 scrolling=no></iframe>');
 
     });
 
 
+    // function validate(term) {
+    //     if (term == "") {
+    //         $("#buttonOutput").empty();
+    //         // alert("Enter a name");
+    //         $(".errorMg").text("Enter a name please")
+    //         $(".errorMg").hide()
+    //         $(".errorMg").fadeIn('slow').animate({
+    //             opacity: 1.0
+    //         }, 1500).fadeOut('slow');
+    //         return false;
+    //     }
+    //     if (!/^[a-zA-Z]*$/g.test(term)) {
+    //         $("#HistoryOutput").empty();
+    //         // alert("Invalid characters");
+    //         $(".errorMg").text("Invalid characters")
+    //         $(".errorMg").hide()
+    //         $(".errorMg").fadeIn('slow').animate({
+    //             opacity: 1.0
+    //         }, 1500).fadeOut('slow');
+    //         return false;
+    //     }
+    //     return true;
+    // }
+
+
+
+
+
     function validate(term) {
         if (term == "") {
-            $("#buttonOutput").empty();
+            $("#ngramData").hide();
+            // $("#buttonOutput").empty();
             // alert("Enter a name");
             $(".errorMg").text("Enter a name please")
-            $(".errorMg").hide()
+            // $(".errorMg").show()
             $(".errorMg").fadeIn('slow').animate({
                 opacity: 1.0
             }, 1500).fadeOut('slow');
             return false;
         }
         if (!/^[a-zA-Z]*$/g.test(term)) {
-            $("#HistoryOutput").empty();
+            $("#ngramData").hide();
+            // $("#buttonOutput").empty();
             // alert("Invalid characters");
             $(".errorMg").text("Invalid characters")
-            $(".errorMg").hide()
+            // $(".errorMg").hide()
             $(".errorMg").fadeIn('slow').animate({
                 opacity: 1.0
             }, 1500).fadeOut('slow');
@@ -220,6 +256,5 @@ jQuery(($) => { // document on ready
         }
         return true;
     }
-
 
 });

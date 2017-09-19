@@ -119,3 +119,17 @@ a:hover.btn {
 figure {
     margin-bottom: 30px;
 }
+
+.errorMg{
+    width: 65%;
+    height: 220px;
+    color: white;
+    font-size: 26px;
+    text-align: center;
+    padding: 80px;
+    background-color: rgba(0, 0, 0, 0.51);
+    position: absolute;
+    left:200px;
+    /* top: 0px; */
+    z-index: 2;
+}
