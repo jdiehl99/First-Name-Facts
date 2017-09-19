@@ -3,6 +3,7 @@ $(document).ready(function () {
 
         event.preventDefault();
         // empty out any data still showing from other buttons
+        $("#popData").empty();
         $("#buttonOutput").empty();
         $("#ngramData").empty();
         $("#theMap").empty();
