@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,21 +31,19 @@
                     First Name Facts
                 </h1>
                 <h2 class="subtitle notHidden">
-                    Learn more about your name history! When you enter your name in the box below, you will
-                    be given the origin country and history of your name. You will also see if you share the same name as
-                    any famous people of today or yesterday.
+                    Learn more about your name history! When you enter your name in the box below, you will be given the origin country and history
+                    of your name. You will also see if you share the same name as any famous people of today or yesterday.
                 </h2>
                 <h2 class="subtitle hidden">
-                        Learn more about your name history!<br>
-                        Enter a name in the search box.
-                    </h2>
+                    Learn more about your name history!<br> Enter a name in the search box.
+                </h2>
             </div>
         </section>
         <!--where you enter the name and the submit button-->
         <div id="mainSearch">
             <!-- error message hiden -->
-                <div class="errorMg"></div>
-                
+            <div class="errorMg"></div>
+
             <div class="control">
                 <input class="input is-primary is-outlined searchInput" type="text" placeholder="Enter your first name here">
             </div>
@@ -55,8 +53,15 @@
         </div>
         <!--hidden buttons to appear after search-->
         <div id="dataShow"></div>
-        <div id="popData"></div>
-        <div id="ngramData"></div>
+        <div class="columns">
+            <div class="column is-4">
+                <div id="popData"></div>
+            </div>
+            <div class="column is-8">
+                <div id="ngramData"></div>
+            </div>
+        </div>
+
         <div id="buttonOutput"></div>
         <div id="theMap"></div>
     </div>

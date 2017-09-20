@@ -151,7 +151,7 @@ jQuery(($) => { // document on ready
                                 countryPageID = "31750";
                                 flagImg = "ua.png";
                             } else { // if not in this list, mark as unknown
-                                countryShow = "Unknown";
+                                countryShow = 'Unknown';
                             }
                         });
                     }
@@ -168,10 +168,10 @@ jQuery(($) => { // document on ready
                         longInfo = response.results["0"].geometry.location.lng;
 
                         // show the country name in the dataShow div on index.html
-                        $("#dataShow").html('<h1 class="countryOrig">You searched for: '+searchTerm+'</h1><h1 class="countryOrig">Your name originates from: ' + countryShow + '</h1>');
+                        $("#dataShow").html('<h1 class="countryOrig">You searched for: '+searchTerm+'. It originates from: ' + countryShow + '</h1>');
 
                         // create links for navigation between APIs
-                        $("#buttonsDiv").append('<a href="#" id="doSearch" class="btn name" searchInput="' + searchTerm + '" data-lat="' + latInfo + '"data-long="' + longInfo + '" data-flag="' + flagImg + '" data-country="' + countryShow + '">STATS</a>');
+                        $("#buttonsDiv").append('<a href="#" id="doSearch2" class="btn name" searchInput="' + searchTerm + '" data-lat="' + latInfo + '"data-long="' + longInfo + '" data-flag="' + flagImg + '" data-country="' + countryShow + '">STATS</a>');
                         $("#buttonsDiv").append('<a href="#" class="btn maps" searchInput="' + searchTerm + '" data-lat="' + latInfo + '"data-long="' + longInfo + '" data-flag="' + flagImg + '" data-country="' + countryShow + '">MAP</a>');
                         $("#buttonsDiv").append('<a href="#" class="btn history" searchInput="' + searchTerm + '" data-flag="' + flagImg + '" data-pageID="' + countryPageID + '" data-country="' + countryShow + '">HISTORY</a>');
                         $("#buttonsDiv").append('<a href="#" class="btn actors" searchInput="' + searchTerm + '" data-name="' + searchTerm + '" data-country="' + countryShow + '">ACTORS</a>');
@@ -187,7 +187,7 @@ jQuery(($) => { // document on ready
 
         } //end of search term validator
 
-        $('#ngramData').html('<iframe name="ngram_chart" src="https://books.google.com/ngrams/interactive_chart?content=' + searchTerm + '&year_start=1800&year_end=2008&corpus=0&smoothing=3&share=&direct_url=t1%3B%2C' + searchTerm + '%3B%2Cc0" width="100%" height="500px" marginwidth=0 marginheight=0 hspace=0 vspace=0 frameborder=0 scrolling=no></iframe>');
+        $('#ngramData').html('<p class="is-size-7">The graph below shows the trend of how frequently your name appeared in a corpus of books (e.g., "British English", "English Fiction", "French") according to Google.</p><iframe name="ngram_chart" src="https://books.google.com/ngrams/interactive_chart?content=' + searchTerm + '&year_start=1800&year_end=2008&corpus=0&smoothing=3&share=&direct_url=t1%3B%2C' + searchTerm + '%3B%2Cc0" width="100%" height="500px" marginwidth=0 marginheight=0 hspace=0 vspace=0 frameborder=0 scrolling=no></iframe>');
 
     });
 
@@ -195,7 +195,10 @@ jQuery(($) => { // document on ready
     function validate(term) {
         if (term == "") {
             $("#ngramData").hide();
+            // $("#buttonOutput").empty();
+            // alert("Enter a name");
             $(".errorMg").text("Enter a name please")
+            // $(".errorMg").show()
             $(".errorMg").fadeIn('slow').animate({
                 opacity: 1.0
             }, 1500).fadeOut('slow');
@@ -203,7 +206,10 @@ jQuery(($) => { // document on ready
         }
         if (!/^[a-zA-Z]*$/g.test(term)) {
             $("#ngramData").hide();
+            // $("#buttonOutput").empty();
+            // alert("Invalid characters");
             $(".errorMg").text("Invalid characters")
+            // $(".errorMg").hide()
             $(".errorMg").fadeIn('slow').animate({
                 opacity: 1.0
             }, 1500).fadeOut('slow');
