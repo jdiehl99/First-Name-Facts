@@ -24,6 +24,8 @@
     <div class="container">
         <!-- navbar for buttons and search -->
         <div id="buttonsDiv"></div>
+
+
         <!-- main div for body -->
         <section class="hero is-light">
             <div class="hero-body">
@@ -40,16 +42,14 @@
             </div>
         </section>
         <!--where you enter the name and the submit button-->
-        <div id="mainSearch">
+        <div id="mainSearch" class="control">
             <!-- error message hiden -->
             <div class="errorMg"></div>
 
-            <div class="control">
-                <input class="input is-primary is-outlined searchInput" type="text" placeholder="Enter your first name here">
-            </div>
-            <div class="control">
+                <input class="input is-primary is-outlined searchInput" type="text" placeholder="Enter your first name here"><br><br>
+           
                 <input class="button is-primary is-outlined minStyle" type="submit" id="doSearch" value="Submit">
-            </div>
+            
         </div>
         <!--hidden buttons to appear after search-->
         <div id="dataShow"></div>
