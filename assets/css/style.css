@@ -211,3 +211,14 @@ figure {
 .columns {
     width: 100%;
 }
+table.poppD {
+    width: 80%;
+    margin: 0 auto;
+}
+td.poppD {
+    border: 1px solid #ececec;
+    padding: 2px;
+}
+#ngramData {
+    width: 100%;
+}

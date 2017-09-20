@@ -167,7 +167,7 @@ jQuery(($) => { // document on ready
                         longInfo = response.results["0"].geometry.location.lng;
 
                         // show the country name in the dataShow div on index.html
-                        $("#dataShow").html('<h1 class="countryOrig">You searched for: '+searchTerm2+'</h1><h1 class="countryOrig">Your name originates from: ' + countryShow + '</h1>');
+                        $("#dataShow").html('<h1 class="countryOrig">You searched for: '+searchTerm2+'.  It originates from: ' + countryShow + '</h1>');
                         
                         // create links for navigation between APIs
                         $("#buttonsDiv").append('<a href="#" id="doSearch2" class="btn name" searchInput="' + searchTerm2 + '" data-lat="' + latInfo + '"data-long="' + longInfo + '" data-flag="' + flagImg + '" data-country="' + countryShow + '">STATS</a>');
@@ -186,7 +186,7 @@ jQuery(($) => { // document on ready
 
         } //end of search term validator
 
-        $('#ngramData').html('<iframe name="ngram_chart" src="https://books.google.com/ngrams/interactive_chart?content=' + searchTerm2 + '&year_start=1800&year_end=2008&corpus=0&smoothing=3&share=&direct_url=t1%3B%2C' + searchTerm2 + '%3B%2Cc0" width="100%" height="500px" marginwidth=0 marginheight=0 hspace=0 vspace=0 frameborder=0 scrolling=no></iframe>');
+        $('#ngramData').html('<p class="is-size-7">The graph below shows the trend of how frequently your name appeared in a corpus of books (e.g., "British English", "English Fiction", "French") according to Google.</p><iframe name="ngram_chart" src="https://books.google.com/ngrams/interactive_chart?content=' + searchTerm2 + '&year_start=1800&year_end=2008&corpus=0&smoothing=3&share=&direct_url=t1%3B%2C' + searchTerm2 + '%3B%2Cc0" width="100%" height="500px" marginwidth=0 marginheight=0 hspace=0 vspace=0 frameborder=0 scrolling=no></iframe>');
 
     });
 
