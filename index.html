@@ -17,7 +17,7 @@
     <script src="jquery-collapser-master/jquery.collapser.js"></script>
     <!-- <link rel="icon" href=""> -->
     <link href="assets/css/style.css" rel="stylesheet">
-    <title>The origin of your name</title>
+    <title>First Name Facts</title>
 </head>
 
 <body>
@@ -28,27 +28,34 @@
         <section class="hero is-light">
             <div class="hero-body">
                 <h1 class="title">
-                    Know Yourself
+                    First Name Facts
                 </h1>
-                <h2 class="subtitle">
-                    Learn more about your personal history starting with your first name! When you enter your name in the box below, you will
+                <h2 class="subtitle notHidden">
+                    Learn more about your name history! When you enter your name in the box below, you will
                     be given the origin country and history of your name. You will also see if you share the same name as
                     any famous people of today or yesterday.
                 </h2>
+                <h2 class="subtitle hidden">
+                        Learn more about your name history!<br>
+                        Enter a name in the search box.
+                    </h2>
             </div>
         </section>
         <!--where you enter the name and the submit button-->
         <div id="mainSearch">
+            <!-- error message hiden -->
+                <div class="errorMg"></div>
+                
             <div class="control">
                 <input class="input is-primary is-outlined searchInput" type="text" placeholder="Enter your first name here">
             </div>
             <div class="control">
-                <input class="button is-primary is-outlined" type="submit" id="doSearch" value="Submit">
+                <input class="button is-primary is-outlined minStyle" type="submit" id="doSearch" value="Submit">
             </div>
         </div>
         <div id="dataShow"></div>
+        <div id="popData"></div>
         <div id="ngramData"></div>
-        <div class="errorMg"></div>
         <div id="buttonOutput"></div>
         <div id="theMap"></div>
     </div>

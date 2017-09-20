@@ -3,6 +3,8 @@ $(document).ready(function () {
 
         event.preventDefault();
         // empty out any data still showing from other buttons
+        $("#dataShow").show();
+        $("#popData").hide();
         $("#buttonOutput").empty();
         $("#ngramData").empty();
         $("#theMap").empty();
@@ -26,16 +28,19 @@ $(document).ready(function () {
             }).done(function (data) {
 
                 countryHistory = data.query.pages["0"];
-                $("#buttonOutput").html(countryHistory.extract);
+
+                 imgTag=$("<img class='flags'>")
+                imgTag.attr("src","assets/images/flags-normal/"+flagInfo);
+                $("#buttonOutput").append(imgTag); 
+
+                $("#buttonOutput").append(countryHistory.extract);
+
                 $('#buttonOutput').collapser({
                     mode: 'chars',
-                    truncate: 600
+                    truncate: 600,
+
                 });
 
-
-                imgTag=$("<img class='flags'>")
-                imgTag.attr("src","assets/images/flags-normal/"+flagInfo);
-                $("#buttonOutput").prepend(imgTag); 
               
             })
 
