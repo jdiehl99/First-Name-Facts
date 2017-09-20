@@ -170,7 +170,7 @@ jQuery(($) => { // document on ready
                         $("#dataShow").html('<h1 class="countryOrig">You searched for: '+searchTerm2+'</h1><h1 class="countryOrig">Your name originates from: ' + countryShow + '</h1>');
                         
                         // create links for navigation between APIs
-                        $("#buttonsDiv").append('<a href="#" id="doSearch" class="btn name" searchInput="' + searchTerm2 + '" data-lat="' + latInfo + '"data-long="' + longInfo + '" data-flag="' + flagImg + '" data-country="' + countryShow + '">STATS</a>');
+                        $("#buttonsDiv").append('<a href="#" id="doSearch2" class="btn name" searchInput="' + searchTerm2 + '" data-lat="' + latInfo + '"data-long="' + longInfo + '" data-flag="' + flagImg + '" data-country="' + countryShow + '">STATS</a>');
                         $("#buttonsDiv").append('<a href="#" class="btn maps" searchInput="' + searchTerm2 + '" data-lat="' + latInfo + '"data-long="' + longInfo + '" data-flag="' + flagImg + '" data-country="' + countryShow + '">MAP</a>');
                         $("#buttonsDiv").append('<a href="#" class="btn history" searchInput="' + searchTerm2 + '" data-flag="' + flagImg + '" data-pageID="' + countryPageID + '" data-country="' + countryShow + '">HISTORY</a>');
                         $("#buttonsDiv").append('<a href="#" class="btn actors" searchInput="' + searchTerm2 + '" data-name="' + searchTerm2 + '" data-country="' + countryShow + '">ACTORS</a>');
