@@ -195,7 +195,10 @@ jQuery(($) => { // document on ready
     function validate(term) {
         if (term == "") {
             $("#ngramData").hide();
+            // $("#buttonOutput").empty();
+            // alert("Enter a name");
             $(".errorMg").text("Enter a name please")
+            // $(".errorMg").show()
             $(".errorMg").fadeIn('slow').animate({
                 opacity: 1.0
             }, 1500).fadeOut('slow');
@@ -203,7 +206,10 @@ jQuery(($) => { // document on ready
         }
         if (!/^[a-zA-Z]*$/g.test(term)) {
             $("#ngramData").hide();
+            // $("#buttonOutput").empty();
+            // alert("Invalid characters");
             $(".errorMg").text("Invalid characters")
+            // $(".errorMg").hide()
             $(".errorMg").fadeIn('slow').animate({
                 opacity: 1.0
             }, 1500).fadeOut('slow');

@@ -41,7 +41,7 @@ jQuery(($) => { // document on ready
 
         //validates the user input to make sure is either a non-empty string or
         // that there arent any numbers or spaces
-        if (validate(searchTerm2)) {
+        if (validate2(searchTerm2)) {
 
             //show graph if search is good
             $("#ngramData").show();
@@ -191,10 +191,13 @@ jQuery(($) => { // document on ready
     });
 
 
-    function validate(term) {
+function validate2(term) {
         if (term == "") {
             $("#ngramData").hide();
+            // $("#buttonOutput").empty();
+            // alert("Enter a name");
             $(".errorMg").text("Enter a name please")
+            // $(".errorMg").show()
             $(".errorMg").fadeIn('slow').animate({
                 opacity: 1.0
             }, 1500).fadeOut('slow');
@@ -202,7 +205,10 @@ jQuery(($) => { // document on ready
         }
         if (!/^[a-zA-Z]*$/g.test(term)) {
             $("#ngramData").hide();
+            // $("#buttonOutput").empty();
+            // alert("Invalid characters");
             $(".errorMg").text("Invalid characters")
+            // $(".errorMg").hide()
             $(".errorMg").fadeIn('slow').animate({
                 opacity: 1.0
             }, 1500).fadeOut('slow');

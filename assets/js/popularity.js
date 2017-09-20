@@ -9,20 +9,10 @@ $(document).ready(function(){
         method: 'GET',
         }).done(function(response){
         //added the parameters of the name
-        $("#popData").html("test");
-        $("#popData").append("<table width="100%">");
-        $("#popData").append("<tr><td>Women</td><td>"+response.name.given.female.count+"</td></tr>");
-        $("#popData").append("<tr><td>Average Age</td><td>"+response.name.given.female.age.densityCurve.meanAge+"</td></tr>");    
-        $("#popData").append("<tr><td>Men</td><td>"+response.name.given.male.count+"</td></tr>");
-        $("#popData").append("<tr><td>Average Age</td><td>"+response.name.given.male.age.densityCurve.meanAge+"</td></tr>");
-        $("#popData").append("</table>");
-
-        // $("#popData").html("women:",response.name.given.female.count);
-        // $("#popData").append("men:",response.name.given.male.count);
-        // $("#popData").append("average age for women:", response.name.given.female.age.densityCurve.meanAge);
-        // $("#popData").append("average age for men:", response.name.given.male.age.densityCurve.meanAge);
-        // })
-         
-
+        $("#popData").append("women:",response.name.given.female.count);
+        $("#popData").append("men:",response.name.given.male.count);
+        $("#popData").append("average age for women:", response.name.given.female.age.densityCurve.meanAge);
+        $("#popData").append("average age for men:", response.name.given.male.age.densityCurve.meanAge);
+        })
     });
 })

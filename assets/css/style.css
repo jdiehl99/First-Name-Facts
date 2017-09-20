@@ -208,3 +208,6 @@ figure {
 .title{
     text-align: center;
 }
+.columns {
+    width: 100%;
+}
