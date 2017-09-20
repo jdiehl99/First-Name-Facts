@@ -28,16 +28,19 @@ $(document).ready(function () {
             }).done(function (data) {
 
                 countryHistory = data.query.pages["0"];
+
+                 imgTag=$("<img class='flags'>")
+                imgTag.attr("src","assets/images/flags-normal/"+flagInfo);
+                $("#buttonOutput").append(imgTag); 
+
                 $("#buttonOutput").append(countryHistory.extract);
+
                 $('#buttonOutput').collapser({
                     mode: 'chars',
-                    truncate: 1100
+                    truncate: 600,
+
                 });
 
-
-                imgTag=$("<img class='flags'>")
-                imgTag.attr("src","assets/images/flags-normal/"+flagInfo);
-                $("#buttonOutput").prepend(imgTag); 
               
             })
 
