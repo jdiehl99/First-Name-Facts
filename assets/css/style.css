@@ -143,11 +143,14 @@ div.actorDisplay {
     border: 4px solid #b1f6cb;
     width: 80%;
 }
-/* .flags{
-    width: 250px;
-    height: 180px;
-    float: right;
-} */
+
+/*added the imput box changes*/
+div.control input.searchInput{
+    width: 60%;
+    text-align: center;
+    padding: 20px;
+}
+
 #dataShow, #buttonOutput {
     padding: 10px;
 }
@@ -163,21 +166,22 @@ div.actorDisplay {
     width: 40%;
 }
 
- /* MARIO'S CHANGE  THIS IS FOR HISTORY.JS */
+
 p {
     padding-bottom: 18px;
 }
-/* **************** */
-/* h1.countryOrig {
-    color: #324035;
-    font-size: 24px;
-    font-weight: bold;
-} */
+
 
 #buttonsDiv {
     background-color: #bef8cf;
     border-bottom: 4px solid #b1f6cb;
-    height: 30px;
+    height: 45px;
+}
+.field{
+    float: right; 
+}
+#control{
+    width: 200px;
 }
 
 a.btn {
@@ -188,11 +192,6 @@ a:hover.btn {
     color: #2B392F;
 }
 
-/* .flags{
-    width: 250px;
-    height: 180px;
-    float: right;
-} */
 figure {
     margin-bottom: 30px;
     margin-left: 20%;
