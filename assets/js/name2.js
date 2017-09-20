@@ -33,7 +33,7 @@ jQuery(($) => { // document on ready
         $("#ngramData").hide();
         $("#theMap").empty();
         $("#buttonsDiv").empty();
-
+        //hides the original search bar
         $("#mainSearch").hide();
 
         // hide title header
@@ -190,7 +190,7 @@ jQuery(($) => { // document on ready
 
     });
 
-
+//tests the input term to make sure they are valid characters
     function validate(term) {
         if (term == "") {
             $("#ngramData").hide();
