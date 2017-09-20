@@ -38,6 +38,8 @@ jQuery(($) => { // document on ready
 
         // grab the name from the input box
         var searchTerm = $(".searchInput").val().trim();
+        $(".searchInput").empty();
+        console.log("search term",searchTerm);
 
         //validates the user input to make sure is either a non-empty string or
         // that there arent any numbers or spaces
@@ -57,7 +59,7 @@ jQuery(($) => { // document on ready
 
                     // grab the results from the XML data returned from BehindTheName
                     var originInfo = $(xml).find('usage').text();
-                    console.log("origin info", originInfo);
+
                     // if no origin was returned, mark as unknown
                     if (originInfo == "") {
                         countryShow = "Unknown";
@@ -69,7 +71,6 @@ jQuery(($) => { // document on ready
                             }
                             // assign the returned origin to variable countryOrigin
                             var countryOrigin = $(this).text();
-                            console.log("origin", countryOrigin);
 
                             // change variable to country name instead of origin, ie: from Spanish to Spain
                             if (countryOrigin == "American") {
@@ -161,30 +162,17 @@ jQuery(($) => { // document on ready
                     // call to google api to get geo location (lat , long)
                     var mapQuery = "https://maps.googleapis.com/maps/api/geocode/json?address=" + countryShow + "&key=AIzaSyDrHgJVlCVFzRNb_R4wjMg38LyZOxsIF4k";
 
-                    console.log("country", countryShow);
-                    console.log("query", mapQuery);
-
-
                     $.ajax({
                         url: mapQuery,
                         method: 'GET'
                     }).done(function (response) {
-                        console.log(response);
+
                         // grab latitude and longitude from results and put into variables
                         latInfo = response.results["0"].geometry.location.lat;
                         longInfo = response.results["0"].geometry.location.lng;
-                        console.log("lat", latInfo);
-                        console.log("long", longInfo);
-
 
                         // show the country name in the dataShow div on index.html
                         $("#dataShow").html('<h1 class="countryOrig">Your name originates from: ' + countryShow + '</h1>');
-
-                        // create buttons for MAP, History, and Actors
-                        // $("#buttonsDiv").append('<button id="doSearch" class="btn name" searchInput="' + searchTerm + '" data-lat="' + latInfo + '"data-long="' + longInfo + '" data-flag="' + flagImg + '" data-country="' + countryShow + '">MAP</button>');
-                        // $("#buttonsDiv").append('<button class="btn maps" searchInput="' + searchTerm + '" data-lat="' + latInfo + '"data-long="' + longInfo + '" data-flag="' + flagImg + '" data-country="' + countryShow + '">MAP</button>');
-                        // $("#buttonsDiv").append('<button class="btn history" searchInput="' + searchTerm + '" data-flag="' + flagImg + '" data-pageID="' + countryPageID + '" data-country="' + countryShow + '">HISTORY</button>');
-                        // $("#buttonsDiv").append('<button class="btn actors" searchInput="' + searchTerm + '" data-name="' + searchTerm + '" data-country="' + countryShow + '">ACTORS</button>');
 
                         // create links for navigation between APIs
                         $("#buttonsDiv").append('<a href="#" id="doSearch" class="btn name" searchInput="' + searchTerm + '" data-lat="' + latInfo + '"data-long="' + longInfo + '" data-flag="' + flagImg + '" data-country="' + countryShow + '">STATS</a>');
@@ -193,8 +181,7 @@ jQuery(($) => { // document on ready
                         $("#buttonsDiv").append('<a href="#" class="btn actors" searchInput="' + searchTerm + '" data-name="' + searchTerm + '" data-country="' + countryShow + '">ACTORS</a>');
 
                         //move the search bar to the navbarbar
-                        $("#buttonsDiv").append('<div class="field has-addons"> <div id="control"> <input class="input" type="text"></div><div id="control"><input class="button is-primary" type="submit" id="doSearch" value="Submit"></div></div>')
-                        //$(".control").detach().appendTo("#buttonsDiv");
+                        $("#buttonsDiv").append('<div class="field has-addons"> <div id="control"> <input class="input is-primary is-outlined searchInput" type="text"></div><div id="control"><input class="button is-primary" type="submit" id="doSearch" value="Submit"></div></div>')
 
                     });
 
@@ -204,46 +191,13 @@ jQuery(($) => { // document on ready
 
         } //end of search term validator
 
-        $('#ngramData').html('<iframe name="ngram_chart" src="https://books.google.com/ngrams/interactive_chart?content=' + searchTerm + '&year_start=1800&year_end=2008&corpus=0&smoothing=3&share=&direct_url=t1%3B%2C' + searchTerm + '%3B%2Cc0" width="100%" height="500px" marginwidth=0 marginheight=0 hspace=0 vspace=0 frameborder=0 scrolling=no></iframe>');
-
+        $('#ngramData').html('<p class="is-size-7">The graph below shows the trend of how frequently your name appeared in a corpus of books (e.g., "British English", "English Fiction", "French") according to Google.</p><iframe name="ngram_chart" src="https://books.google.com/ngrams/interactive_chart?content=' + searchTerm + '&year_start=1800&year_end=2008&corpus=0&smoothing=3&share=&direct_url=t1%3B%2C' + searchTerm + '%3B%2Cc0" width="100%" height="500px" marginwidth=0 marginheight=0 hspace=0 vspace=0 frameborder=0 scrolling=no></iframe>');
     });
-
-
-    // function validate(term) {
-    //     if (term == "") {
-    //         $("#buttonOutput").empty();
-    //         // alert("Enter a name");
-    //         $(".errorMg").text("Enter a name please")
-    //         $(".errorMg").hide()
-    //         $(".errorMg").fadeIn('slow').animate({
-    //             opacity: 1.0
-    //         }, 1500).fadeOut('slow');
-    //         return false;
-    //     }
-    //     if (!/^[a-zA-Z]*$/g.test(term)) {
-    //         $("#HistoryOutput").empty();
-    //         // alert("Invalid characters");
-    //         $(".errorMg").text("Invalid characters")
-    //         $(".errorMg").hide()
-    //         $(".errorMg").fadeIn('slow').animate({
-    //             opacity: 1.0
-    //         }, 1500).fadeOut('slow');
-    //         return false;
-    //     }
-    //     return true;
-    // }
-
-
-
-
 
     function validate(term) {
         if (term == "") {
             $("#ngramData").hide();
-            // $("#buttonOutput").empty();
-            // alert("Enter a name");
             $(".errorMg").text("Enter a name please")
-            // $(".errorMg").show()
             $(".errorMg").fadeIn('slow').animate({
                 opacity: 1.0
             }, 1500).fadeOut('slow');
@@ -251,10 +205,7 @@ jQuery(($) => { // document on ready
         }
         if (!/^[a-zA-Z]*$/g.test(term)) {
             $("#ngramData").hide();
-            // $("#buttonOutput").empty();
-            // alert("Invalid characters");
             $(".errorMg").text("Invalid characters")
-            // $(".errorMg").hide()
             $(".errorMg").fadeIn('slow').animate({
                 opacity: 1.0
             }, 1500).fadeOut('slow');
