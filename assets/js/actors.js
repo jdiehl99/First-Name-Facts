@@ -30,9 +30,10 @@ $(document).ready(function () {
                 if (data[i].profile_path != null) {
                     // show image from TMDB
                     var imgShow = 'https://image.tmdb.org/t/p/w92/' + data[i].profile_path;
-                    udiv.append('<figure>');
-                    udiv.append('<a href="https://www.themoviedb.org/search?query='+data[i].name+'" target="_blank"><img src="' + imgShow + '" class="actorimg"></a>');
-                    udiv.append('<figcaption>' + data[i].name + '</figcaption>');
+                    var figTag=$('<figure>');
+                    figTag.append('<a href="https://www.themoviedb.org/search?query='+data[i].name+'" target="_blank"><img src="' + imgShow + '" class="actorimg"></a>');
+                    figTag.append('<figcaption>' + data[i].name + '</figcaption>');
+                    udiv.append(figTag);
                 }
             }
             $("#buttonOutput").append(udiv);    // add the list to the dataShow div

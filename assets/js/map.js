@@ -10,9 +10,13 @@ $(document).ready(function () {
     $("#ngramData").empty();
     $("#theMap").empty();
     $("#theMap").show();
+
+    // Grabbing the attr's from the buttons to pass them to the map generator funcion
     var newFlag=$(this).attr("data-flag");
     var latval = parseInt($(this).attr("data-lat"));
     var longval = parseInt($(this).attr("data-long"));
+    
+    // calling the map generator funcion
     initMap(latval, longval, newFlag);
 
 
