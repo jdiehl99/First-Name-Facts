@@ -113,6 +113,73 @@ body {
     background-image: url('../images/congruent_pentagon.png');
 }
 
+
+}
+
+@media screen and (max-width: 640px) {
+    [class*="col-"] {
+        width: 100%;
+    }
+    #ngramData {
+        display: none;
+    }
+
+    p{
+        float: right;
+    }
+
+    .notHidden{
+        display: none;
+    }
+
+    .minStyle{
+        width: 80%;
+    }
+
+    #theMap {
+        margin: 0 auto;
+        height: 300px;
+        width: 80%;
+        margin-bottom: 15px;
+    }
+
+    h1.countryOrig {
+        color: #324035;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .flags{
+        width: 90%;
+        height: 180px;
+        float: left;
+        margin-left: 25px;
+        margin-bottom: 10px;
+    }
+
+
+    div.actorList {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+        margin: 10px;
+    }
+
+}
+
+@media print {
+    body {
+        background-color: #fff;
+        background-image: hide;
+    }
+}
+
+
+
+body {
+    background-image: url('../images/congruent_pentagon.png');
+}
+
 /* div.actorList {
     -webkit-column-count: 3;
     -moz-column-count: 3;
@@ -207,4 +274,18 @@ figure {
 }
 .title{
     text-align: center;
+}
+.columns {
+    width: 100%;
+}
+table.poppD {
+    width: 80%;
+    margin: 0 auto;
+}
+td.poppD {
+    border: 1px solid #ececec;
+    padding: 2px;
+}
+#ngramData {
+    width: 100%;
 }
