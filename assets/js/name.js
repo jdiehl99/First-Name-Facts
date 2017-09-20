@@ -28,7 +28,7 @@ jQuery(($) => { // document on ready
         $("#theMap").empty();
         $("#buttonsDiv").empty();
         //$("#mainSearch").detach();
-        //$("#mainSearch").hide();
+        $("#mainSearch").hide();
 
         // hide title header
         $(".hero").hide();
@@ -186,9 +186,9 @@ jQuery(($) => { // document on ready
                         $("#buttonsDiv").append('<a href="#" class="btn history" searchInput="' + searchTerm + '" data-flag="' + flagImg + '" data-pageID="' + countryPageID + '" data-country="' + countryShow + '">HISTORY</a>');
                         $("#buttonsDiv").append('<a href="#" class="btn actors" searchInput="' + searchTerm + '" data-name="' + searchTerm + '" data-country="' + countryShow + '">ACTORS</a>');
                         //move the search bar to the navbar
-                        //$("#buttonsDiv").append('<div class="field has-addons"> <div id="control"> <input class="input" type="text" placeholder="' + searchTerm + '"></div><div id="control"><input class="button is-primary" type="submit" id="' + doSearch + '" value="Submit"></div></div>')
-                        $(".control").appendTo("#buttonsDiv");
-                            console.log("i've detatched");
+                        $("#buttonsDiv").append('<div class="field has-addons"> <div id="control"> <input class="input" type="text"></div><div id="control"><input class="button is-primary" type="submit" id="doSearch" value="Submit"></div></div>')
+                        //$(".control").detach().appendTo("#buttonsDiv");
+                            
                     });
 
 
