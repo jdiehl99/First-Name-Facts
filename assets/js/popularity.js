@@ -1,13 +1,16 @@
 $(document).ready(function(){
-    //when you click the submit button you get the results
+    //get the name entered when the search button is clicked
     $(document).on("click", "#doSearch", function () {
+        //grabs the information for the popularity of the searchTerm
         var nameSearch = $(".searchInput").val().trim();
         var namePop = "https://api.fullcontact.com/v2/name/stats.json?name=" + nameSearch + "&apiKey=e957faa606a34537";
-
+        //sends name request through ajax
         $.ajax({
         url: namePop,
         method: 'GET',
+        //displays the information related to the name
         }).done(function(response){
+
         //added the parameters of the name
         var datBox = $('#popData'),
         table = $('<table class="poppD">');
@@ -25,11 +28,6 @@ $(document).ready(function(){
         table.append(tr4);
         datBox.append(table);
 
-
-        // $("#popData").append("women:",response.name.given.female.count);
-        // $("#popData").append("men:",response.name.given.male.count);
-        // $("#popData").append("average age for women:", response.name.given.female.age.densityCurve.meanAge);
-        // $("#popData").append("average age for men:", response.name.given.male.age.densityCurve.meanAge);
         })
     });
 })
