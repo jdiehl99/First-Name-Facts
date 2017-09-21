@@ -20,3 +20,5 @@ Simply enter a first name in the search box and then explore the information usi
 ### Actors
 * a list of actors/actresses that also share your first name
 * clicking on any image will take you to a new page where you can learn more about that person
+
+![app example](https://jdiehl99.github.io/First-Name-Facts/assets/images/gameplay.gif "Example")
