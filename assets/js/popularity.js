@@ -1,6 +1,7 @@
 $(document).ready(function(){
     //get the name entered when the search button is clicked
     $(document).on("click", "#doSearch", function () {
+         $("#popData").empty();
         //grabs the information for the popularity of the searchTerm
         var nameSearch = $(".searchInput").val().trim();
         var namePop = "https://api.fullcontact.com/v2/name/stats.json?name=" + nameSearch + "&apiKey=e957faa606a34537";
