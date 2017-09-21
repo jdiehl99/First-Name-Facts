@@ -2,40 +2,6 @@
     box-sizing: border-box;
 }
 
-@media screen and (min-width: 640px) {
-
-.hidden{
-        display: none;
-    }
-
-    #theMap {
-        margin: 0 auto;
-        height: 380px;
-        width: 82%;
-        margin-bottom: 20px;
-    }
-
-    h1.countryOrig {
-        color: #324035;
-        font-size: 24px;
-        font-weight: bold;
-    }
-
-    .flags{
-        width: 250px;
-        height: 180px;
-        float: right;
-    }
-
-    div.actorList {
-        -webkit-column-count: 3;
-        -moz-column-count: 3;
-        column-count: 3;
-        margin: 20px;
-    }
-    
-
-}
 
 @media screen and (max-width: 768px) {
     /* For mobile phones: */
@@ -45,9 +11,9 @@
     #ngramData {
         display: none;
     }
-
-
 }
+
+
 
 @media screen and (max-width: 640px) {
     [class*="col-"] {
@@ -106,97 +72,11 @@
         background-image: hide;
     }
 }
-
-
 
 body {
     background-image: url('../images/congruent_pentagon.png');
     height: 2000px;
 }
-
-
-}
-
-@media screen and (max-width: 640px) {
-    [class*="col-"] {
-        width: 100%;
-    }
-    #ngramData {
-        display: none;
-    }
-
-    p{
-        float: right;
-    }
-
-    .notHidden{
-        display: none;
-    }
-
-    .minStyle{
-        width: 80%;
-    }
-
-    #theMap {
-        margin: 0 auto;
-        height: 300px;
-        width: 80%;
-        margin-bottom: 15px;
-    }
-
-    h1.countryOrig {
-        color: #324035;
-        font-size: 18px;
-        font-weight: bold;
-    }
-
-    .flags{
-        width: 90%;
-        height: 180px;
-        float: left;
-        margin-left: 25px;
-        margin-bottom: 10px;
-    }
-
-
-    div.actorList {
-        -webkit-column-count: 2;
-        -moz-column-count: 2;
-        column-count: 2;
-        margin: 10px;
-    }
-
-}
-
-@media print {
-    body {
-        background-color: #fff;
-        background-image: hide;
-    }
-}
-
-
-
-body {
-    background-image: url('../images/congruent_pentagon.png');
-}
-
-/* div.actorList {
-    -webkit-column-count: 3;
-    -moz-column-count: 3;
-    column-count: 3;
-} */
-
-div.actorDisplay {
-    break-before: column;
-}
-
-/* #theMap {
-    margin: 0 auto;
-    height: 400px;
-    width: 85%;
-    margin-bottom: 20px;
-} */
 
 .container {
     background-color: #fff;
@@ -208,27 +88,21 @@ div.actorDisplay {
     background-color: #bef8cf;
 }
 
-div.control input.searchInput{
+.searchInput{
     width: 60%;
     text-align: center;
-    padding: 20px;
 }
 
-#dataShow, #buttonOutput {
-    padding: 10px;
-}
 #mainSearch {
     margin-top: 40px;
-    text-align: center;
 }
+
 .control { 
     text-align: center;
     padding: 10px;
 
 }
-#searchInput {
-    width: 40%;
-}
+
 
 p {
     padding-bottom: 18px;
@@ -237,13 +111,10 @@ p {
 #buttonsDiv {
     background-color: #bef8cf;
     border-bottom: 4px solid #b1f6cb;
-    height: 45px;
+    min-height: 45px;
 }
 .field{
     float: right; 
-}
-#control{
-    width: 200px;
 }
 
 a.btn {
@@ -260,16 +131,15 @@ figure {
 }
 
 .errorMg{
+    position: fixed;
     width: 65%;
-    height: 220px;
+    height: 30%;
     color: white;
     font-size: 26px;
     text-align: center;
     padding: 80px;
+    margin-left: 6% ;
     background-color: rgba(0, 0, 0, 0.51);
-    position: absolute;
-    left:200px;
-    /* top: 0px; */
     z-index: 2;
 }
 .title{
