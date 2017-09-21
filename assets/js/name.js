@@ -12,42 +12,55 @@ $("#buttonsDiv").hide();
 $("#theMap").hide();
 // hide error div until call upon 
 $(".errorMg").hide()
-
+var temp="";
 jQuery(($) => { // document on ready
 
     $(document).on("click", "#doSearch", function () {
 
+        // $(".map").empty();
+        // $(".actor").empty();
+        // $(".histo").empty();
+
+         // grab the name from the input box
+         var searchTerm = $(".searchInput").val().trim();
+         console.log("search term",searchTerm);
 
         console.log("search button was clicked");
         event.preventDefault();
+
+        // show buttons div 
+        if(searchTerm!==temp){
+             // empty buttons div 
+           $(".stat").empty();
+           $(".map").empty();
+           $(".actor").empty();
+           $(".histo").empty();
+           
+           
+              temp=searchTerm;
+        }
 
         
 
         // empty out the div where the results are displayed        
         $("#buttonOutput").empty();
         $("#dataShow").hide();
-        $("#popData").hide()
+        $("#popData").hide();
         $("#ngramData").hide();
         $("#theMap").empty();
-        // $("#buttonsDiv").empty();
+        // $("#buttonsDiv").empty()
 
-       
 
         
-
-        // grab the name from the input box
-        var searchTerm = $(".searchInput").val().trim();
-        console.log("search term",searchTerm);
-
-
-
         //validates the user input to make sure is either a non-empty string or
         // that there arent any numbers or spaces
         if (validate(searchTerm)) {
 
 
-            // show buttons div 
-           $("#buttonsDiv").show();
+        //     // empty buttons div 
+        //    $("#buttonsDiv").empty();
+            
+
 
             // hide title header
              $(".hero").hide();
@@ -177,20 +190,25 @@ jQuery(($) => { // document on ready
                         latInfo = response.results["0"].geometry.location.lat;
                         longInfo = response.results["0"].geometry.location.lng;
 
+                        
                         // show the country name in the dataShow div on index.html
                         $("#dataShow").html('<h1 class="countryOrig">You searched for: '+searchTerm+'. It originates from: ' + countryShow + '</h1>');
 
+                        $("#buttonsDiv").append($("#mainSearch").removeClass("control").css({"margin-top":"0"}).addClass("field has-addons"));
+                        
+
                         // create links for navigation between APIs
-                        $("#buttonsDiv").append('<a href="#" id="doSearch" class="btn name" searchInput="' + searchTerm + '" data-lat="' + latInfo + '"data-long="' + longInfo + '" data-flag="' + flagImg + '" data-country="' + countryShow + '">STATS</a>');
-                        $("#buttonsDiv").append('<a href="#" class="btn maps" searchInput="' + searchTerm + '" data-lat="' + latInfo + '"data-long="' + longInfo + '" data-flag="' + flagImg + '" data-country="' + countryShow + '">MAP</a>');
-                        $("#buttonsDiv").append('<a href="#" class="btn history" searchInput="' + searchTerm + '" data-flag="' + flagImg + '" data-pageID="' + countryPageID + '" data-country="' + countryShow + '">HISTORY</a>');
-                        $("#buttonsDiv").append('<a href="#" class="btn actors" searchInput="' + searchTerm + '" data-name="' + searchTerm + '" data-country="' + countryShow + '">ACTORS</a>');
+                        $(".stat").replaceWith('<a href="#" id="doSearch" class="btn name" searchInput="' + searchTerm + '" data-lat="' + latInfo + '"data-long="' + longInfo + '" data-flag="' + flagImg + '" data-country="' + countryShow + '">STATS</a>');
+                        $(".map").replaceWith('<a href="#" class="btn maps map" searchInput="' + searchTerm + '" data-lat="' + latInfo + '"data-long="' + longInfo + '" data-flag="' + flagImg + '" data-country="' + countryShow + '">MAP</a>');
+                        $(".histo").replaceWith('<a href="#" class="btn history histo" searchInput="' + searchTerm + '" data-flag="' + flagImg + '" data-pageID="' + countryPageID + '" data-country="' + countryShow + '">HISTORY</a>');
+                        $(".actor").replaceWith('<a href="#" class="btn actors actor" searchInput="' + searchTerm + '" data-name="' + searchTerm + '" data-country="' + countryShow + '">ACTORS</a>');
 
 
-                        //moves the original search bar
-                         $("#buttonsDiv").append($("#mainSearch").removeClass("control").css({"margin-top":"0"}).addClass("field has-addons"));
+                        // //moves the original search bar
+                        //  $("#buttonsDiv").append($("#mainSearch").removeClass("control").css({"margin-top":"0"}).addClass("field has-addons"));
 
-    
+                         $("#buttonsDiv").show();
+                         
 
                     });
 
@@ -201,6 +219,7 @@ jQuery(($) => { // document on ready
         } //end of search term validator
 
         $('#ngramData').html('<p class="is-size-7">The graph below shows the trend of how frequently your name appeared in a corpus of books (e.g., "British English", "English Fiction", "French") according to Google.</p><iframe name="ngram_chart" src="https://books.google.com/ngrams/interactive_chart?content=' + searchTerm + '&year_start=1800&year_end=2008&corpus=0&smoothing=3&share=&direct_url=t1%3B%2C' + searchTerm + '%3B%2Cc0" width="100%" height="500px" marginwidth=0 marginheight=0 hspace=0 vspace=0 frameborder=0 scrolling=no></iframe>');
+
 
     });
 
